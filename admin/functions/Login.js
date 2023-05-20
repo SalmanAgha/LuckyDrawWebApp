@@ -59,7 +59,7 @@ else
               timer: 4000
           })
             .then(function () {
-                window.location.href = 'home.php';
+                window.location.href = 'Home.php';
             });
         } else if ( result == "inactive")
         {

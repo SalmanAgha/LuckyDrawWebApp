@@ -9144,7 +9144,9 @@ background-color: #60c364;
 }
 
 
-
+.color-white{
+color: white !important;
+}
 
 @media screen and (min-width: 1024px) {
   .navbar {
@@ -9204,3 +9206,6 @@ background-color: #60c364;
 
   .footer ul li { padding-left:1rem; 
                   font-size: 1.2rem;}
+
+
+

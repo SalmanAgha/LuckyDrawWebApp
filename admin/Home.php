@@ -2,8 +2,8 @@
 <?php
 include('middleware/is_Logout.php');
  
-if( isset($_SESSION['adminid']) ){
-      $userid = $_SESSION['adminid'];
+if( isset($_SESSION['userid']) ){
+      $userid = $_SESSION['userid'];
 } 
 ?>
 

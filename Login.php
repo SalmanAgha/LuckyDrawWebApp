@@ -1,3 +1,7 @@
+<?php
+include('middleware/is_Login.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -18,19 +18,18 @@ if(isset($_POST['email']) &&     isset($_POST['pass']) )
 	include('../connect.php');
 
 
-	$stmt = $connect -> prepare( "SELECT `adminid`,`adminname`, `email`, `password` FROM `admin` WHERE email = ?");
+	$stmt = $connect -> prepare( "SELECT `userid`, `Name`, `Email`, `password` FROM `user` WHERE email = ?");
 	$stmt -> bind_param("s", $email);
 
    //Executing the statement
 	$stmt->execute();
 
    //Binding variables to resultset
-	$stmt->bind_result($result[0]["adminid"],$result[0]["adminname"],$result[0]["email"],$result[0]["password"]);
+	$stmt->bind_result($result[0]["userid"],$result[0]["Name"],$result[0]["Email"],$result[0]["password"]);
 	while ($stmt->fetch()) {
-		$adminid = $result[0]["adminid"];
-		$adminname = $result[0]["adminname"];
-
-		$dbemail = $result[0]["email"];
+		$userid = $result[0]["userid"];
+		$Name = $result[0]["Name"];
+		$dbemail = $result[0]["Email"];
 		$dbPassword = $result[0]["password"];
 
 	}
@@ -47,15 +46,12 @@ if(isset($_POST['email']) &&     isset($_POST['pass']) )
 	{	
  
 			session_start();
-			$_SESSION['adminid'] = $adminid;
+			$_SESSION['userid'] = $userid;
+			$_SESSION['username'] = $Name;
 			$_SESSION['email'] = $dbemail; 
-			$_SESSION['username'] = $adminname; 
-
-			
  
 			mysqli_close($connect);
-			$data["email"] = $email;
-			$data["username"] = $adminname;
+			$data["username"] = $Name;
 			$data["result"] = "successful";
 			echo json_encode($data);
  
