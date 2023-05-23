@@ -1,9 +1,9 @@
 
 <?php
-if(isset($_POST["name"]) && isset($_POST["dateofcreation"]) && isset($_POST["dateofexpiry"]) && isset($_POST["totaltickets"]) && isset($_POST["ticketsremaining"]) && isset($_POST["ticketsold"]) && isset($_POST["amount"]) && isset($_POST["status"]) && isset($_POST["adminid"]) && isset($_POST["winningamount"]) )
+if(isset($_POST["name"]) && isset($_POST["dateofcreation"]) && isset($_POST["dateofexpiry"]) && isset($_POST["totaltickets"]) && isset($_POST["ticketsremaining"]) && isset($_POST["ticketsold"]) && isset($_POST["amount"]) && isset($_POST["status"])   && isset($_POST["winningamount"]) )
 {   
 
- 
+ session_start();
 $name = filter_var(($_POST["name"])); 
 $dateofcreation = filter_var(($_POST["dateofcreation"])); 
 $dateofexpiry = filter_var(($_POST["dateofexpiry"])); 
@@ -12,7 +12,9 @@ $ticketsremaining = filter_var(($_POST["ticketsremaining"]));
 $ticketsold = filter_var(($_POST["ticketsold"])); 
 $amount = filter_var(($_POST["amount"])); 
 $status = filter_var(($_POST["status"])); 
-$adminid = filter_var(($_POST["adminid"])); 
+$adminid = $_SESSION["userid"]; 
+ 
+
 $winningamount = filter_var(($_POST["winningamount"])); 
 
    

@@ -1,10 +1,15 @@
- 
 <?php
-// include('middleware/is_Logout.php');
+session_start();
+include('connect.php');
+error_reporting(1);
 
-// if( isset($_SESSION['adminid']) ){
-//   $userid = $_SESSION['adminid'];
-// } 
+if( !isset($_SESSION['userid']) ){
+    header("location: Login.php");
+}else{ 
+
+    $userid = $_SESSION['userid'];
+
+}
 ?>
 
 
@@ -15,7 +20,6 @@
     <?php include 'meta.php';?>
     <!--Morris Chart CSS -->
     <link rel="stylesheet" href="assets/plugins/morris/morris.css">
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <link href="assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
     <!-- App css -->
@@ -23,7 +27,8 @@
     <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 </head>
 <body>
@@ -92,118 +97,75 @@
 
 
                 <div class="row">
-               
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img class="card-img-top img-fluid" src="assets/images/sliderimg2.jpeg" alt="Card image cap"> 
+                            </div><!--end card-body-->
+                        </div><!--end card-->
+                    </div><!--end col-->
 
-            <?php 
-            include("connect.php");
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img class="card-img-top img-fluid" src="assets/images/sliderimg2.jpeg" alt="Card image cap"> 
+                            </div><!--end card-body-->
+                        </div><!--end card-->
+                    </div><!--end col-->
 
-            $query = mysqli_query($connect,"SELECT    `contestid`, `name`, `dateofcreation`, `dateofexpiry`, `totaltickets`, `ticketsremaining`, `ticketsold`, `amount`, `status`, `adminid`, `winningamount`, `image`,`contest_status` FROM `contest` WHERE `status` = 'Active'");
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img class="card-img-top img-fluid" src="assets/images/sliderimg2.jpeg" alt="Card image cap"> 
+                            </div><!--end card-body-->
+                        </div><!--end card-->
+                    </div><!--end col-->
 
-            while ($row = mysqli_fetch_array($query))
-            {
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <img class="card-img-top img-fluid" src="assets/images/sliderimg2.jpeg" alt="Card image cap"> 
+                            </div><!--end card-body-->
+                        </div><!--end card-->
+                    </div><!--end col-->
+                </div><!--end row-->
 
-                if($row["contest_status"] == 'Close'){
-$button=' <a href="Winner.php?id='.$row["contestid"].'"  class="btn btn-custom">View Winner</a>';
-                }
-                else {
-                   $button=' <a href="BuyTicket.php?id='.$row["contestid"].'"  class="btn btn-custom">Buy Ticket</a>'; 
-                }
-                
-                                    // <img class="card-img" src="assets/contests/'.$row["image"].'" alt="Contest Image">
 
-              echo '  
-                   <div class="col-md-6 col-lg-4" style="margin-top:1rem !important;">
-                        <div class="card" style="background: navy; height: 100%;">
 
-                            <div class="row no-gutters">
-                                <div class="col-sm-5">
-                                    <img class="card-img" src="assets/contests/1.png" alt="Contest Image">
-                                </div>
-                                <div class="col-sm-7">
-                                    <div class="card-body">
-                                       <table class="color-white">
+                <!--==================== section 4 ==================== -->
 
-                                        <tr>
-                                            <td colspan="3">
-                                             <p class="card-text color-white">Winning Price</p> 
-                                         </td>
-                                     </tr>
-                                     <tr>
-                                        <td colspan="3"><h1 class="card-title color-white">'.$row["winningamount"].'</h1></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3"><h5 class="card-title color-white">'.$row["name"].'</h5></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total Tickets</td>
-                                        <td>Tickets Sold</td>
-                                        <td>Tickets Remaining</td>
 
-                                    </tr>
-                                    <tr>
-                                        <td>'.$row["totaltickets"].'</td>
-                                        <td>'.$row["ticketsremaining"].'</td>
-                                        <td>'.$row["ticketsold"].'</td>
 
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3">
-                                        '.$button.'
-                                         </td>
-
-                                    </tr>
-                                </table>
-
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <img class="card-img-top img-fluid" src="assets/images/sliderimg3.jpeg" alt="Card image cap"> 
 
                             </div>
+                        </div><!--end card-body-->    
+                    </div><!--end card-->
+                </div><!--end col-->
+            </div><!--end row-->
+
+
+
+
+            <!--==================== section 5 ==================== -->
+
+
+
+            <div class="row mb-5 section5">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top img-fluid mb-5" src="assets/images/section5img.png" alt="Card image cap"> 
                         </div>
-                    </div>
-                </div>
-            </div> 
-              ';;
-
-          }
-
-          ?>
-
-      </div><!--end row-->
-
-
-
-      <!--==================== section 4 ==================== -->
-
-
-
-      <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <img class="card-img-top img-fluid" src="assets/images/sliderimg3.jpeg" alt="Card image cap"> 
-
-                </div>
-            </div><!--end card-body-->    
-        </div><!--end card-->
-    </div><!--end col-->
-</div><!--end row-->
-
-
-
-
-<!--==================== section 5 ==================== -->
-
-
-
-<div class="row mb-5 section5">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-                <img class="card-img-top img-fluid mb-5" src="assets/images/section5img.png" alt="Card image cap"> 
-            </div>
-        </div><!--end card-body-->    
-    </div><!--end card-->
-</div><!--end col-->
-</div><!--end row-->
-
+                    </div><!--end card-body-->    
+                </div><!--end card-->
+            </div><!--end col-->
+        </div><!--end row-->
+       
 
 </div><!-- container -->
 </div>
@@ -241,7 +203,7 @@ $button=' <a href="Winner.php?id='.$row["contestid"].'"  class="btn btn-custom">
 <script src="assets/js/app.js"></script>
 
 
-<script src="functions/index.js"></script>
+<script src="functions/Staff.js"></script>
 
 <!-- App js -->
 <script src="assets/js/app.js"></script>

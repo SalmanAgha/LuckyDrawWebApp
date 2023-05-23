@@ -9209,3 +9209,11 @@ color: white !important;
 
 
 
+.btn-custom{
+background-color: red !important;
+color: white!important;
+}
+.btn-custom{
+  -webkit-box-shadow: 0 7px 14px 0 rgba(182, 194, 228, 0.5) !important; 
+   box-shadow: 0 7px 14px 0 rgba(182, 194, 228, 0.5)!important; 
+}

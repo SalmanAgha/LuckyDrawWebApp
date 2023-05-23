@@ -15,6 +15,20 @@ $status = filter_var(($_POST["status1"]));
 
 	include("../connect.php");    
 	 
+//selecting user
+$stmt = $connect->prepare("SELECT  `balance` FROM `user` WHERE `userid` =  ?;");
+$stmt->bind_param("i", $userid);
+
+// Executing the statement
+$stmt->execute();
+// Binding variables to resultset
+$stmt->bind_result($dbBalance);
+
+// Fetching the results
+while ($stmt->fetch()) {
+  $Balance = $dbBalance; 
+}
+
  		$plot_approving="UPDATE `financial` SET `date`='$date',`amount`='$amount',`type`='$type',`userid`='$userid',`description`='$description',`status`='$status' WHERE `financialid`=$id ";
  		$run_querry=mysqli_query($connect,$plot_approving);
 		mysqli_close($connect);
@@ -23,6 +37,25 @@ $status = filter_var(($_POST["status1"]));
 	if( $run_querry == "True"){
 	 
  		$data["result"] = "Done";
+
+    if($type == 'Credit'){
+$newBalance= $Balance + $amount;
+
+  $plot_approving="UPDATE `user` SET `balance`='$newBalance' WHERE `userid`=$userid ";
+    $run_querry=mysqli_query($connect,$plot_approving);
+
+
+    }else  if($type == 'Debit'){
+
+$newBalance= $Balance - $amount;
+  $plot_approving="UPDATE `user` SET `balance`=".$newBalance." WHERE `userid`=$userid ";
+    $run_querry=mysqli_query($connect,$plot_approving);
+
+
+
+    }
+
+ 		
 		echo json_encode($data);
 	}
 	else

@@ -23,7 +23,19 @@ if($connect)
       $empty="";
       while ($row = mysqli_fetch_array($query))
       {
-      $Action="<td><a  id=".$row["contestid"]." data-name=".$row["name"]." data-dateofcreation=".$row["dateofcreation"]." data-dateofexpiry=".$row["dateofexpiry"]." data-totaltickets=".$row["totaltickets"]." data-ticketsremaining=".$row["ticketsremaining"]." data-ticketsold=".$row["ticketsold"]." data-amount=".$row["amount"]." data-status=".$row["status"]." data-adminid=".$row["adminid"]." data-winningamount=".$row["winningamount"]."  class='mr-2 edit-modal' data-toggle='modal' data-animation='bounce' data-target='.edit-modal1' ><i class='fas fa-edit text-info font-16'></i> </a>";
+      $Action="<td><a  id=".$row["contestid"]." 
+      data-name='".$row["name"]."' 
+      data-dateofcreation='".$row["dateofcreation"]."' 
+      data-dateofexpiry='".$row["dateofexpiry"]."' 
+      data-totaltickets='".$row["totaltickets"]."' 
+      data-ticketsremaining='".$row["ticketsremaining"]."' 
+      data-ticketsold='".$row["ticketsold"]."' 
+      data-amount='".$row["amount"]."' 
+      data-status='".$row["status"]."' 
+      data-adminid='".$row["adminid"]."' 
+      data-winningamount='".$row["winningamount"]."'
+
+        class='mr-2 edit-modal' data-toggle='modal' data-animation='bounce' data-target='.edit-modal1' ><i class='fas fa-edit text-info font-16'></i> </a>";
         $mysql_data[] = array
         (
           "Empty"     => $Action,

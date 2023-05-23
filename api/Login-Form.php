@@ -9,6 +9,7 @@ if(isset($_POST['email']) &&     isset($_POST['pass']) )
 	$Password = htmlentities($_POST["pass"]); 
 	$dbemail = '';
 	$dbPassword = '';
+	$balance='';
 
 
 	$result = array();
@@ -18,20 +19,21 @@ if(isset($_POST['email']) &&     isset($_POST['pass']) )
 	include('../connect.php');
 
 
-	$stmt = $connect -> prepare( "SELECT `userid`, `Name`, `Email`, `password` FROM `user` WHERE email = ?");
+	$stmt = $connect -> prepare( "SELECT `userid`, `Name`, `Email`, `password`,`balance` FROM `user` WHERE email = ?");
 	$stmt -> bind_param("s", $email);
 
    //Executing the statement
 	$stmt->execute();
 
    //Binding variables to resultset
-	$stmt->bind_result($result[0]["userid"],$result[0]["Name"],$result[0]["Email"],$result[0]["password"]);
+	$stmt->bind_result($result[0]["userid"],$result[0]["Name"],$result[0]["Email"],$result[0]["password"],$result[0]["balance"]);
 	while ($stmt->fetch()) {
 		$userid = $result[0]["userid"];
 		$Name = $result[0]["Name"];
 		$dbemail = $result[0]["Email"];
 		$dbPassword = $result[0]["password"];
-
+		$balance = $result[0]["balance"];
+	
 	}
 
 
@@ -49,6 +51,9 @@ if(isset($_POST['email']) &&     isset($_POST['pass']) )
 			$_SESSION['userid'] = $userid;
 			$_SESSION['name'] = $Name;
 			$_SESSION['email'] = $dbemail; 
+			$_SESSION['balance'] = $balance; 
+
+			
  
 			mysqli_close($connect);
 			$data["username"] = $Name;

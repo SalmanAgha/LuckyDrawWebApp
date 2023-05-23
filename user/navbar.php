@@ -48,7 +48,7 @@
                        <div class="dropdown-menu dropdown-menu-right">
                             <!-- <a class="dropdown-item" href="#"><i class="dripicons-user text-muted mr-2"></i> Profile</a> -->
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="Logout.php"><i class="dripicons-exit text-muted mr-2"></i> Log-out</a>
+                            <a class="dropdown-item" href="../Logout.php"><i class="dripicons-exit text-muted mr-2"></i> Log-out</a>
                         </div>
                     </li>
                 </ul><!--end topbar-nav-->

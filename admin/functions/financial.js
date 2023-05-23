@@ -6,7 +6,11 @@ function tblfinancial(){
         "ajax": "api/Tblfinancial.php",
         "columns": [
          { "data": "Empty"},
-           { "data": "date"} ,{ "data": "amount"} ,{ "data": "type"} ,{ "data": "userid"} ,{ "data": "description"} ,{ "data": "status"} 
+           { "data": "date"} ,{ "data": "amount"} ,
+           { "data": "type"} ,{ "data": "userid"} ,
+           { "data": "description"} ,
+           { "data": "status"},
+           { "data": "previousbalance"} 
           
         ],
       });

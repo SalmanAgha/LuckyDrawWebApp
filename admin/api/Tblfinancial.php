@@ -8,7 +8,7 @@ $message="";
 if($connect)
 {
 
-    $query = mysqli_query($connect,"SELECT financialid,date,amount,type,userid,description,status FROM `financial`");
+    $query = mysqli_query($connect,"SELECT financialid,date,amount,type,userid,description,status,previousbalance FROM `financial`");
     if (!$query
   )  {
 
@@ -23,11 +23,19 @@ if($connect)
       $empty="";
       while ($row = mysqli_fetch_array($query))
       {
-      $Action="<td><a  id=".$row["financialid"]." data-date=".$row["date"]." data-amount=".$row["amount"]." data-type=".$row["type"]." data-userid=".$row["userid"]." data-description=".$row["description"]." data-status=".$row["status"]."  class='mr-2 edit-modal' data-toggle='modal' data-animation='bounce' data-target='.edit-modal1' ><i class='fas fa-edit text-info font-16'></i> </a>";
+      $Action="<td><a  id=".$row["financialid"]." 
+      data-date='".$row["date"]."' 
+      data-amount='".$row["amount"]."' 
+      data-type='".$row["type"]."'
+      data-userid='".$row["userid"]."' 
+      data-description='".$row["description"]."' 
+      data-status='".$row["status"]."'
+
+        class='mr-2 edit-modal' data-toggle='modal' data-animation='bounce' data-target='.edit-modal1' ><i class='fas fa-edit text-info font-16'></i> </a>";
         $mysql_data[] = array
         (
           "Empty"     => $Action,
-          "date" => $row["date"],"amount" => $row["amount"],"type" => $row["type"],"userid" => $row["userid"],"description" => $row["description"],"status" => $row["status"]
+          "date" => $row["date"],"amount" => $row["amount"],"type" => $row["type"],"userid" => $row["userid"],"description" => $row["description"],"status" => $row["status"],"previousbalance" => $row["previousbalance"]
           
         );
       }

@@ -103,7 +103,7 @@ if( isset($_SESSION['adminid']) ){
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Date of Creation</label>
     <div class="col-sm-10">
-    <input class="form-control  " type="text" placeholder="Enter Date of Creation" id="dateofcreation"><span class="help-block custom-block-hide" id="4v"><small ></small></span>
+    <input class="form-control  " type="datetime-local" placeholder="Enter Date of Creation" id="dateofcreation"><span class="help-block custom-block-hide" id="4v"><small ></small></span>
     </div>
     </div>
                                     
@@ -163,7 +163,7 @@ if( isset($_SESSION['adminid']) ){
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Date of Creation</label>
     <div class="col-sm-10">
-    <input class="form-control  " type="text" placeholder="Enter Date of Creation" id="dateofcreation1"><span class="help-block custom-block-hide" id="4v1"><small ></small></span>
+    <input class="form-control  " type="datetime-local" placeholder="Enter Date of Creation" id="dateofcreation1"><span class="help-block custom-block-hide" id="4v1"><small ></small></span>
     </div>
     </div>
                                             

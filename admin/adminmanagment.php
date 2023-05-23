@@ -61,7 +61,7 @@ if( isset($_SESSION['adminid']) ){
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style=" overflow-x: auto;border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                     <tr>
-                                    <th></th><th>Admin Name</th><th>Email</th><th>Password</th><th>Doc</th><th>Status</th>
+                                    <th>Edit</th><th>Admin Name</th><th>Email</th><th>Password</th><th>Doc</th><th>Status</th>
                                     </tr>
                                         </thead>
                                         <tbody>
@@ -106,7 +106,7 @@ if( isset($_SESSION['adminid']) ){
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Doc</label>
     <div class="col-sm-10">
-    <input class="form-control numbersOnly" type="number" placeholder="Enter Date" id="doc"><span class="help-block custom-block-hide" id="4v"><small ></small></span>
+    <input class="form-control numbersOnly" type="datetime-local" placeholder="Enter Date" id="doc"><span class="help-block custom-block-hide" id="4v"><small ></small></span>
     </div>
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Status</label>
@@ -171,7 +171,7 @@ if( isset($_SESSION['adminid']) ){
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Doc</label>
     <div class="col-sm-10">
-    <input class="form-control numbersOnly" type="number" placeholder="Enter Date" id="doc1"><span class="help-block custom-block-hide" id="4v1"><small ></small></span>
+    <input class="form-control numbersOnly" type="datetime-local" placeholder="Enter Date" id="doc1"><span class="help-block custom-block-hide" id="4v1"><small ></small></span>
     </div>
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Status</label>

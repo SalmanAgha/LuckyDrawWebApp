@@ -21,7 +21,7 @@ $aadharcard = filter_var(($_POST["aadharcard"]));
     
   }
   else{
-    $stmt = $connect->prepare("insert into user (name,username,email,password,doc,status,pancard,aadharcard) values (?,?,?,?,?,?,?,?)");
+    $stmt = $connect->prepare("insert into user (name,username,email,password,doc,status,pancard,aadharcard,balance) values (?,?,?,?,?,?,?,?,0)");
     $stmt->bind_param('ssssssii', $name,$username,$email,$password,$doc,$status,$pancard,$aadharcard); 
     $stmt->execute();
     if ($stmt == true) 

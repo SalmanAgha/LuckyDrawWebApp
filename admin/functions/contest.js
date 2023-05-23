@@ -6,7 +6,9 @@ function tblcontest(){
         "ajax": "api/Tblcontest.php",
         "columns": [
          { "data": "Empty"},
-           { "data": "name"} ,{ "data": "dateofcreation"} ,{ "data": "dateofexpiry"} ,{ "data": "totaltickets"} ,{ "data": "ticketsremaining"} ,{ "data": "ticketsold"} ,{ "data": "amount"} ,{ "data": "status"} ,{ "data": "adminid"} ,{ "data": "winningamount"} 
+           { "data": "name"} ,{ "data": "dateofcreation"} ,{ "data": "dateofexpiry"} ,
+           { "data": "totaltickets"} ,{ "data": "ticketsremaining"} ,
+           { "data": "ticketsold"} ,{ "data": "amount"} ,{ "data": "status"} ,{ "data": "adminid"} ,{ "data": "winningamount"} 
           
         ],
       });
@@ -47,9 +49,7 @@ var name = $("#name").val();
 
  var amount = $("#amount").val(); 
 
- var status = $("#status").val(); 
-
- var adminid = $("#adminid").val(); 
+ var status = $("#status").val();  
 
  var winningamount = $("#winningamount").val(); 
 
@@ -119,15 +119,7 @@ var name = $("#name").val();
          $("#status").focus();
         
 
-    } else if(adminid == "" ){
-
-     $("#9v").css("display", "block");
-      $("#9v").text("Invalid adminid."); 
-         $("#adminid").css("border-color", "red");
-         $("#adminid").focus();
-        
-
-    } else if(winningamount == "" ){
+    }  else if(winningamount == "" ){
 
      $("#10v").css("display", "block");
       $("#10v").text("Invalid winningamount."); 
@@ -155,7 +147,9 @@ var name = $("#name").val();
             method: "POST",
             data: {
  
-                name:name,dateofcreation:dateofcreation,dateofexpiry:dateofexpiry,totaltickets:totaltickets,ticketsremaining:ticketsremaining,ticketsold:ticketsold,amount:amount,status:status,adminid:adminid,winningamount:winningamount
+                name:name,dateofcreation:dateofcreation,dateofexpiry:dateofexpiry,
+                totaltickets:totaltickets,ticketsremaining:ticketsremaining,ticketsold:ticketsold
+                ,amount:amount,status:status,winningamount:winningamount
                
               
             },
@@ -220,8 +214,7 @@ var name1 = $("#name1").val();
  var amount1 = $("#amount1").val(); 
 
  var status1 = $("#status1").val(); 
-
- var adminid1 = $("#adminid1").val(); 
+ 
 
  var winningamount1 = $("#winningamount1").val(); 
 
@@ -291,15 +284,7 @@ var name1 = $("#name1").val();
          $("#status1").focus();
         
 
-    } else if(adminid1 == "" ){
-
-     $("#9v1").css("display", "block");
-      $("#9v1").text("Invalid adminid."); 
-         $("#adminid1").css("border-color", "red");
-         $("#adminid1").focus();
-        
-
-    } else if(winningamount1 == "" ){
+    }  else if(winningamount1 == "" ){
 
      $("#10v1").css("display", "block");
       $("#10v1").text("Invalid winningamount."); 
@@ -325,7 +310,7 @@ var name1 = $("#name1").val();
             url: "api/Updatecontest.php",
             method: "POST",
             data: {id:id,
-                 name1:name1,dateofcreation1:dateofcreation1,dateofexpiry1:dateofexpiry1,totaltickets1:totaltickets1,ticketsremaining1:ticketsremaining1,ticketsold1:ticketsold1,amount1:amount1,status1:status1,adminid1:adminid1,winningamount1:winningamount1
+                 name1:name1,dateofcreation1:dateofcreation1,dateofexpiry1:dateofexpiry1,totaltickets1:totaltickets1,ticketsremaining1:ticketsremaining1,ticketsold1:ticketsold1,amount1:amount1,status1:status1,winningamount1:winningamount1
             },
             dataType: "JSON",
             success: function (data) 

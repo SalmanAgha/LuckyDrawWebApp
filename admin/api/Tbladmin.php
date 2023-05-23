@@ -23,7 +23,15 @@ if($connect)
       $empty="";
       while ($row = mysqli_fetch_array($query))
       {
-      $Action="<td><a  id=".$row["adminid"]." data-adminname=".$row["adminname"]." data-email=".$row["email"]." data-password=".$row["password"]." data-doc=".$row["doc"]." data-status=".$row["status"]."  class='mr-2 edit-modal' data-toggle='modal' data-animation='bounce' data-target='.edit-modal1' ><i class='fas fa-edit text-info font-16'></i> </a>";
+      $Action="<td><a  id=".$row["adminid"]." 
+      data-adminname='".$row["adminname"]."'
+       data-email='".$row["email"]."' 
+       data-password='".$row["password"]."'
+        data-doc='".$row["doc"]."' 
+        data-status='".$row["status"]."'  
+
+
+        class='mr-2 edit-modal' data-toggle='modal' data-animation='bounce' data-target='.edit-modal1' ><i class='fas fa-edit text-info font-16'></i> </a>";
         $mysql_data[] = array
         (
           "Empty"     => $Action,

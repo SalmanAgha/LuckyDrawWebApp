@@ -58,7 +58,7 @@ if( isset($_SESSION['adminid']) ){
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style=" overflow-x: auto;border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                     <tr>
-                                    <th></th><th>Name</th><th>Date of Creation</th><th>Date of Expiry</th><th>Total Tickets</th><th>Tickets Remaining</th><th>Tickets Sold</th><th>Amount</th><th>Status</th><th>Admin Id</th><th>Winning Amount</th>
+                                    <th>Edit</th><th>Name</th><th>Date of Creation</th><th>Date of Expiry</th><th>Total Tickets</th><th>Tickets Remaining</th><th>Tickets Sold</th><th>Amount</th><th>Status</th><th>Admin Id</th><th>Winning Amount</th>
                                     </tr>
                                         </thead>
                                         <tbody>
@@ -93,12 +93,12 @@ if( isset($_SESSION['adminid']) ){
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Date of Creation</label>
     <div class="col-sm-10">
-    <input class="form-control  " type="text" placeholder="Enter Date of Creation" id="dateofcreation"><span class="help-block custom-block-hide" id="2v"><small ></small></span>
+    <input class="form-control  " type="datetime-local" placeholder="Enter Date of Creation" id="dateofcreation"><span class="help-block custom-block-hide" id="2v"><small ></small></span>
     </div>
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Date of Expiry</label>
     <div class="col-sm-10">
-    <input class="form-control  " type="text" placeholder="Enter Date of Expiry" id="dateofexpiry"><span class="help-block custom-block-hide" id="3v"><small ></small></span>
+    <input class="form-control  " type="datetime-local" placeholder="Enter Date of Expiry" id="dateofexpiry"><span class="help-block custom-block-hide" id="3v"><small ></small></span>
     </div>
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Total Tickets</label>
@@ -122,18 +122,23 @@ if( isset($_SESSION['adminid']) ){
     </div>
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Status</label>
-    <div class="col-sm-10">
-    <input class="form-control  " type="text" placeholder="Enter Status" id="status"><span class="help-block custom-block-hide" id="8v"><small ></small></span>
+    <div class="col-sm-10"> 
+  <select class="select2 form-control mb-3 custom-select " style="width: 100%; height:36px;" tabindex="-1" aria-hidden="true" id="status" >
+
+                        <option value="null" selected disabled>Select</option>
+                        <option value="Active">Active</option>
+                        <option value="In Active">In Active</option> 
+                    </select> 
+    <span class="help-block custom-block-hide" id="8v"><small ></small></span>
     </div>
-    </div><div class="form-group row">
-    <label for="example-text-input" class="col-sm-2 col-form-label text-right">Admin Id</label>
-    <div class="col-sm-10">
-    <input class="form-control numbersOnly" type="number" placeholder="Enter Admin Id" id="adminid"><span class="help-block custom-block-hide" id="9v"><small ></small></span>
     </div>
-    </div><div class="form-group row">
+
+
+
+    <div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Winning Amount</label>
     <div class="col-sm-10">
-    <input class="form-control numbersOnly" type="number" placeholder="Enter Winning Amount" id="winningamount"><span class="help-block custom-block-hide" id="10v"><small ></small></span>
+    <input class="form-control numbersOnly" type="text" placeholder="Enter Winning Amount" id="winningamount"><span class="help-block custom-block-hide" id="10v"><small ></small></span>
     </div>
     </div>
                                     
@@ -183,12 +188,12 @@ if( isset($_SESSION['adminid']) ){
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Date of Creation</label>
     <div class="col-sm-10">
-    <input class="form-control  " type="text" placeholder="Enter Date of Creation" id="dateofcreation1"><span class="help-block custom-block-hide" id="2v1"><small ></small></span>
+    <input class="form-control  " type="datetime-local" placeholder="Enter Date of Creation" id="dateofcreation1"><span class="help-block custom-block-hide" id="2v1"><small ></small></span>
     </div>
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Date of Expiry</label>
     <div class="col-sm-10">
-    <input class="form-control  " type="text" placeholder="Enter Date of Expiry" id="dateofexpiry1"><span class="help-block custom-block-hide" id="3v1"><small ></small></span>
+    <input class="form-control  " type="datetime-local" placeholder="Enter Date of Expiry" id="dateofexpiry1"><span class="help-block custom-block-hide" id="3v1"><small ></small></span>
     </div>
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Total Tickets</label>
@@ -210,20 +215,25 @@ if( isset($_SESSION['adminid']) ){
     <div class="col-sm-10">
     <input class="form-control numbersOnly" type="number" placeholder="Enter Amount" id="amount1"><span class="help-block custom-block-hide" id="7v1"><small ></small></span>
     </div>
-    </div><div class="form-group row">
+    </div>
+
+    <div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Status</label>
     <div class="col-sm-10">
-    <input class="form-control  " type="text" placeholder="Enter Status" id="status1"><span class="help-block custom-block-hide" id="8v1"><small ></small></span>
+                 <select class="select2 form-control mb-3 custom-select " style="width: 100%; height:36px;" tabindex="-1" aria-hidden="true" id="status1" >
+
+                        <option value="null" selected disabled>Select</option>
+                        <option value="Active">Active</option>
+                        <option value="In Active">In Active</option> 
+                    </select> 
+
+    <span class="help-block custom-block-hide" id="8v1"><small ></small></span>
     </div>
-    </div><div class="form-group row">
-    <label for="example-text-input" class="col-sm-2 col-form-label text-right">Admin Id</label>
-    <div class="col-sm-10">
-    <input class="form-control numbersOnly" type="number" placeholder="Enter Admin Id" id="adminid1"><span class="help-block custom-block-hide" id="9v1"><small ></small></span>
     </div>
-    </div><div class="form-group row">
+  <div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Winning Amount</label>
     <div class="col-sm-10">
-    <input class="form-control numbersOnly" type="number" placeholder="Enter Winning Amount" id="winningamount1"><span class="help-block custom-block-hide" id="10v1"><small ></small></span>
+    <input class="form-control numbersOnly" type="text" placeholder="Enter Winning Amount" id="winningamount1"><span class="help-block custom-block-hide" id="10v1"><small ></small></span>
     </div>
     </div>
                                             

@@ -58,7 +58,7 @@ if( isset($_SESSION['adminid']) ){
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style=" overflow-x: auto;border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                     <tr>
-                                    <th></th><th>Name</th><th>User Name</th><th>Email</th><th>Password</th><th>Date</th><th>Status</th><th>Pan Card</th><th>Aadhar Card</th>
+                                    <th>Edit</th><th>Name</th><th>User Name</th><th>Email</th><th>Password</th><th>Date</th><th>Status</th><th>Pan Card</th><th>Aadhar Card</th>
                                     </tr>
                                         </thead>
                                         <tbody>
@@ -108,7 +108,7 @@ if( isset($_SESSION['adminid']) ){
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Date</label>
     <div class="col-sm-10">
-    <input class="form-control  " type="text" placeholder="Enter Date" id="doc"><span class="help-block custom-block-hide" id="5v"><small ></small></span>
+    <input class="form-control  " type="datetime-local" placeholder="Enter Date" id="doc"><span class="help-block custom-block-hide" id="5v"><small ></small></span>
     </div>
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Status</label>
@@ -188,7 +188,7 @@ if( isset($_SESSION['adminid']) ){
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Date</label>
     <div class="col-sm-10">
-    <input class="form-control  " type="text" placeholder="Enter Date" id="doc1"><span class="help-block custom-block-hide" id="5v1"><small ></small></span>
+    <input class="form-control  " type="datetime-local" placeholder="Enter Date" id="doc1"><span class="help-block custom-block-hide" id="5v1"><small ></small></span>
     </div>
     </div><div class="form-group row">
     <label for="example-text-input" class="col-sm-2 col-form-label text-right">Status</label>
